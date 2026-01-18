@@ -1,0 +1,12 @@
+<h2>📷 QR Сканер</h2>
+<video id="video" autoplay></video>
+<p id="result"></p>
+
+<script src="https://unpkg.com/html5-qrcode"></script>
+<script>
+  new Html5Qrcode("video").start(
+    { facingMode: "environment" },
+    { fps: 10, qrbox: 250 },
+    txt => document.getElementById("result").innerText = txt
+  );
+</script>
