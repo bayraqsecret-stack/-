@@ -1,0 +1,10 @@
+<h2>📂 Чек архиві</h2>
+<div id="list"></div>
+
+<script>
+const list = document.getElementById("list");
+JSON.parse(localStorage.getItem("receipts") || "[]")
+.forEach(r => {
+  list.innerHTML += `<p>${r.date} — ${r.amount}₸ (${r.pay})</p>`;
+});
+</script>
